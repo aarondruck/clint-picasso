@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clint Picasso</title> 
+	<link rel="stylesheet" href="main.css" />
+	<!-- json2 is included because some browsers doesnt have it (e.g. ie8)	-->
+	<script src="json2.js"></script>		
+	<script src="easyWebSocket.min.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="jquery.tmpl.min.js"></script>
+	<script src="jQuery.url.js"></script>
+	<script src="main.js"></script>
+	<script src="http://www.bitstorm.org/jquery/shadow-animation/archive/jquery.animate-shadow-min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		//check if mobile device
+		var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+		var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+		var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+		
+				if(isiPhone > -1)
+				{
+				    //Redirect to iPhone Version of the website.
+				  	window.location.href = "http://www.clintpicasso.com/draw/";
+
+				}
+				if(isAndroid > -1)
+				{
+					alert("Sorry, not supported for Android yet!");
+				    //Redirect to iPad Version of the website.
+				}
+	</script>
+	
+</head>
+<body>
+	
+	<style type="text/css" media="screen">
+		.myImage img{
+			position:relative;
+			left:200px;
+			top:100px;
+		}
+		
+		.directions {
+			float:left;
+		}
+	</style>
+	
+	<!-- <ol class="directions">
+		<li>Keep this page open</li>
+		<li>Go to chat.html on your mobile browser</li>
+		<li>Draw a picture</li>
+		<li>Fling it to this page</li>
+	</ol> -->
+	
+	<!-- <div id="result"></div> -->
+	
+	<div id="myintro">
+		<h1>Clint Picasso</h1>
+		<h3>Keep this site open on your desktop. Open this same site on your phone. *Draw a picture and shoot it to this canvas!</h3>
+		<h4>*Remember to turn up the volume on both desktop and mobile!</h4>
+	</div>
+	<div id="bigCanvasArea" class="myblankcanvas">
+		
+		<div class="myImage"></div>
+
+	</div>
+	
+	
+	<div id="container" style="display:none">
+		<div class="header">
+			<div class="userContainer">
+				<span class="label">Username: </span>
+				<span class="username value">Unknown</span>
+			</div>
+		</div>
+		<div class="chatArea">
+		</div>
+		<script class="tmplChatMessage" type="text/x-jquery-tmpl">
+			<div>
+				<span class="username">${username}</span> :
+				<span class="message">${message}</span>
+			</div>
+		</script>
+		<script class="tmplChatJoin" type="text/x-jquery-tmpl">
+			<div>
+				<span class="username">${username}</span>
+				<span>just joined.</span>
+			</div>
+		</script>
+		<script class="tmplChatRename" type="text/x-jquery-tmpl">
+			<div>
+				<span class="oldUsername username">${oldUsername}</span>
+				<span>is renamed as</span>
+				<span class="newUsername username">${newUsername}</span>
+			</div>
+		</script>
+		
+		<div class="footer">
+			
+
+			<hr/>
+		</div>
+	</div>
+	
+	
+	<div id="footer-contact">
+		<div id="footer-text">
+			<p>Designed and built by <a href="http://www.twitter.com/adruck" target="_blank">@adruck</a> in San Francisco. Code on <a href="https://github.com" target="_blank">Github</a>.  Demo on <a href="http://www.youtube.com/watch?v=hNA29Vmqvpg" target="_blank">YouTube</a>. </p>
+		</div>
+	</div>
+	
+</body>
+</html>
