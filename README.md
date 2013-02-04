@@ -17,13 +17,21 @@ YouTube demo: http://www.youtube.com/watch?v=hNA29Vmqvpg
 Frankenstein'd these together:
 ==========================================
 EasyWebSocket - http://easywebsocket.org
+
 jQueryMobile - http://jquerymobile.com
+
 ProcessingJS - http://processingjs.org
+
 SketchJS - http://intridea.github.com/sketch.js/
+
 HTML5: HTML5: Saving Canvas Image Data Using PHP And Ajax - http://permadi.com/blog/2010/10/html5-saving-canvas-image-data-using-php-and-ajax/
+
 Processing Slingshot - http://www.openprocessing.org/sketch/38639
 
 
-Special thanks to Pablo Picasso and Clint Barton.
+Special thanks to:
+==========================================
+Pablo Picasso and Clint Barton.
 
+--
 Contact @adruck for more info!
