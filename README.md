@@ -5,7 +5,7 @@ Clint Picasso!
 
 2) Go to http://www.clintpicasso.com on your desktop browser (tested on Firefox, Chrome and Safari).
 
-3) Go to http://www.clintpicasso.com on your mobile device (tested on iPhone), and it'll redirect to the mobile website.
+3) Go to http://www.clintpicasso.com on your mobile device (tested on an iPhone 4S and a Google Nexus 7), and it'll redirect to the mobile website.
 
 4) Draw something on your mobile device, "Save" it, hit "Next", then slingshot the drawing onto the desktop website.
 
