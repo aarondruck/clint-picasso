@@ -18,15 +18,74 @@
 	<script src="../jQuery.url.js"></script>
 	<script src="../main.js"></script>
 	
+	<!-- Custom Font -->
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	
 	<!-- //// -->
 	
 	
 	<style type="text/css" media="screen">
+		
+		/*custom CSS to override JQM*/
+		body  * {
+			font-family: 'Arvo', serif !important;
+		    font-weight: normal !important;
+		  }
+		
+		.ui-header {
+			background: black !important;
+			border:1px solid #000;
+		}
+		
+		#page2, #page4 {
+				background: #3f5663 !important;
+		}
+	
+		span.ui-btn-inner {
+			display:none;
+		}
+		a#arrow-right {
+			background:url("imgs/icn-right.png") no-repeat !important;
+			border:0px solid #fff;
+			box-shadow:0px solid #fff;
+			-moz-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			-webkit-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+		}
+		
+		a#arrow-left {
+			background:url("imgs/icn-left.png") no-repeat !important;
+			border:0px solid #fff;
+			box-shadow:0px solid #fff;
+			-moz-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			-webkit-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+		}
+		
+		#saveBtn {
+			background:url("imgs/btn-save.png") no-repeat !important;
+			border:0px solid #000;
+			height:48px;
+			width:48px;
+			box-shadow:none;
+		}
+		
+		#clearBtn {
+			background:url("imgs/btn-clear.png") no-repeat !important;
+			border:0px solid #000;
+			height:48px;
+			width:48px;
+			box-shadow:none;
+		}
+		
+		/*////*/
+		
 		#paintBox
 		{
-		  border:1px solid #9a9a9a;
+		  border:1px solid #ccc;
 		  width:100%;
 		  height: 280px;
+		  background:#fff;
 		}
 		
 		#mycanvas{
@@ -77,7 +136,7 @@
 
 	function clearCanvas() {
 	  context.clearRect(0,0,canvas.width,canvas.height);
-	  alert("Cleared!");
+	  //alert("Cleared!");
 	}
 
 	function startPaint(evt) {
@@ -141,7 +200,7 @@
 
 	<div data-role="header">
 		<h1>Draw a picture</h1>
-		<a href="#page4" data-transition="slide" data-icon="arrow-r"  rel="external" onclick="saveViaAJAX();" class="ui-btn-right">Next</a>
+		<a id="arrow-right" href="#page4" data-transition="slide" data-icon="custom"  rel="external" onclick="saveViaAJAX();" class="ui-btn-right" data-iconpos="notext">Next</a>
 	</div><!-- /header -->
 
 	<div data-role="content">	
@@ -152,8 +211,8 @@
 	  	</canvas>
 		
 		<center>
-			<a href="#" data-role="button" data-inline="true" id="clearBtn">Clear</a>
-		<a href="#" data-role="button" data-inline="true" data-theme="b" id="saveBtn">Save</a>
+			<a href="#" data-role="button" data-inline="true" id="clearBtn"></a>
+			<a href="#" data-role="button" data-inline="true" data-theme="b" id="saveBtn" style="display:none"></a>
 		</center>
 
 
@@ -223,7 +282,7 @@
 <div data-role="page" id="page4">
 
 	<div data-role="header">
-		<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+		<a id="arrow-left" href="#" data-rel="back" data-icon="custom" data-iconpos="notext">Back</a>
 		<h1>Fire!</h1>
 	</div><!-- /header -->
 
