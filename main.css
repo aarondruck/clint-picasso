@@ -1,5 +1,5 @@
 body {
-	background-color: #efefef;
+	background-color: #68638c;
 	width: 100%;
 	text-align: center;
 }
@@ -25,39 +25,39 @@ body {
 
 #myintro h1{
 	font-size: 40px;
-	font-weight: 200;
+	font-weight: 700;
 	line-height: 1;
 	letter-spacing: -1px;
-	font-family: 'Helvetica Neue', Helvetica;
-	color: rgb(90, 90, 90);
+	font-family: 'Lato', sans-serif !important;
+	color: #e0935c;
 	margin: 10px auto;
 }
 
 #myintro h3 {
 	margin: 10px auto;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 100;
 	line-height: 1.25;
-	color: #999;
-	font-family: 'Helvetica Neue', Helvetica;
+	color: #fff;
+	font-family: 'Lato', sans-serif !important;
 }
 
 #myintro h4 {
-	width:600px;
+	width:400px;
 	margin: 10px auto;
 	font-size: 10px;
-	font-weight: 300;
+	font-weight: 100;
 	line-height: 1.25;
-	color: #999;
-	font-family: 'Helvetica Neue', Helvetica;
+	color: #fff;
+	font-family: 'Lato', sans-serif !important;
 }
 
 #footer-contact {
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 1.25;
-	color: #999;
-	font-family: 'Helvetica Neue', Helvetica;
+	color: #fff;
+	font-family: 'Lato', sans-serif !important;
 	width:100%;
 }
 
@@ -68,12 +68,12 @@ body {
 
 #footer-text a {
 	text-decoration:none;
-	color:#4d7bbe;
+	color: #e0935c;
 }
 
 #footer-text a:hover {
 	text-decoration:underline;
-	color:#4d7bbe;
+	color: #e0935c;
 }
 
 #container {

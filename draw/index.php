@@ -19,7 +19,7 @@
 	<script src="../main.js"></script>
 	
 	<!-- Custom Font -->
-	<link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	
 	<!-- //// -->
 	
@@ -28,17 +28,23 @@
 		
 		/*custom CSS to override JQM*/
 		body  * {
-			font-family: 'Arvo', serif !important;
-		    font-weight: normal !important;
+			font-family: 'Lato', sans-serif !important;
+			font-weight: 700 !important;
 		  }
 		
 		.ui-header {
-			background: black !important;
-			border:1px solid #000;
+			background: #68638c !important;
+			border-bottom:1px solid #000;
+			border-top:1px solid rgba(255,255,255,0.2);
+		}
+		
+		h1.ui-title {
+			color:#e0935c;
+			text-shadow:0px 1px -1px rgba(0,0,0,0.5) !important;
 		}
 		
 		#page2, #page4 {
-				background: #3f5663 !important;
+				background: #2c2a3c !important;
 		}
 	
 		span.ui-btn-inner {
@@ -46,20 +52,24 @@
 		}
 		a#arrow-right {
 			background:url("imgs/icn-right.png") no-repeat !important;
+			background-size:28px 28px !important;
 			border:0px solid #fff;
 			box-shadow:0px solid #fff;
 			-moz-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			-webkit-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			padding-right:10px;
 		}
 		
 		a#arrow-left {
 			background:url("imgs/icn-left.png") no-repeat !important;
+			background-size:28px 28px !important;
 			border:0px solid #fff;
 			box-shadow:0px solid #fff;
 			-moz-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			-webkit-box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
+			margin-left:3px;
 		}
 		
 		#saveBtn {
@@ -72,9 +82,10 @@
 		
 		#clearBtn {
 			background:url("imgs/btn-clear.png") no-repeat !important;
+			background-size:24px 24px;
 			border:0px solid #000;
-			height:48px;
-			width:48px;
+			height:24px;
+			width:24px;
 			box-shadow:none;
 		}
 		
@@ -82,15 +93,17 @@
 		
 		#paintBox
 		{
-		  border:1px solid #ccc;
+		  border:0px solid #ccc;
 		  width:100%;
 		  height: 280px;
+		  border-radius:2px;
 		  background:#fff;
 		}
 		
 		#mycanvas{
 			margin-top:-20px;
-			border:1px solid #ccc;
+			border:0px solid #ccc;
+			border-radius:2px;
 		}
 		
 	</style>
