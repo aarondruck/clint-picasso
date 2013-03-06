@@ -212,7 +212,7 @@
 <div data-role="page" id="page2">
 
 	<div data-role="header">
-		<h1>Draw a picture</h1>
+		<h1>DRAW.</h1>
 		<a id="arrow-right" href="#page4" data-transition="slide" data-icon="custom"  rel="external" onclick="saveViaAJAX();" class="ui-btn-right" data-iconpos="notext">Next</a>
 	</div><!-- /header -->
 
@@ -296,7 +296,7 @@
 
 	<div data-role="header">
 		<a id="arrow-left" href="#" data-rel="back" data-icon="custom" data-iconpos="notext">Back</a>
-		<h1>Fire!</h1>
+		<h1>FIRE!</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
