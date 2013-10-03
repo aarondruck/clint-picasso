@@ -1,52 +1,52 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-	<title>Clint Picasso</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clint Picasso</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.2.0.min.css" />
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
 	<script src="js/sketch.js"></script>
-	
+
 	<!-- ADD IN HEADER STUFF FROM CHAT -->
-	
-	<link rel="stylesheet" href="http://easywebsocket.org/contrib/chat/main.css" />
-	<script src="../json2.js"></script>		
+
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="../json2.js"></script>
 	<script src="../easyWebSocket.min.js"></script>
 	<script src="../jquery.min.js"></script>
 	<script src="../jquery.tmpl.min.js"></script>
 	<script src="../jQuery.url.js"></script>
 	<script src="../main.js"></script>
-	
+
 	<!-- Custom Font -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	
+
 	<!-- //// -->
-	
-	
+
+
 	<style type="text/css" media="screen">
-		
+
 		/*custom CSS to override JQM*/
 		body  * {
 			font-family: 'Lato', sans-serif !important;
 			font-weight: 700 !important;
 		  }
-		
+
 		.ui-header {
 			background: #68638c !important;
 			border-bottom:1px solid #000;
 			border-top:1px solid rgba(255,255,255,0.2);
 		}
-		
+
 		h1.ui-title {
 			color:#e0935c;
 			text-shadow:0px 1px -1px rgba(0,0,0,0.5) !important;
 		}
-		
+
 		#page2, #page4 {
 				background: #2c2a3c !important;
 		}
-	
+
 		span.ui-btn-inner {
 			display:none;
 		}
@@ -60,7 +60,7 @@
 			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			padding-right:10px;
 		}
-		
+
 		a#arrow-left {
 			background:url("imgs/icn-left.png") no-repeat !important;
 			background-size:28px 28px !important;
@@ -71,7 +71,7 @@
 			box-shadow: 0 0px 0 rgba(255,255,255,.3) !important;
 			margin-left:3px;
 		}
-		
+
 		#saveBtn {
 			background:url("imgs/btn-save.png") no-repeat !important;
 			border:0px solid #000;
@@ -79,7 +79,7 @@
 			width:48px;
 			box-shadow:none;
 		}
-		
+
 		#clearBtn {
 			background:url("imgs/btn-clear.png") no-repeat !important;
 			background-size:24px 24px;
@@ -88,9 +88,9 @@
 			width:24px;
 			box-shadow:none;
 		}
-		
+
 		/*////*/
-		
+
 		#paintBox
 		{
 		  border:0px solid #ccc;
@@ -99,15 +99,15 @@
 		  border-radius:2px;
 		  background:#fff;
 		}
-		
+
 		#mycanvas{
 			margin-top:-20px;
 			border:0px solid #ccc;
 			border-radius:2px;
 		}
-		
+
 	</style>
-	
+
 	<script type="text/javascript">
 	  var canvas = null; //canvas object
 	  var context = null; //canvas's context object
@@ -173,7 +173,7 @@
 	function stopPaint() {
 	  buttonDown = false;
 	}
-	
+
 	function save()
 	{
 		alert("Saved!");
@@ -184,18 +184,18 @@
 	    document.getElementById("canvasimg").style.display="inline";
 
 	}
-	
-	
-	
-	
+
+
+
+
 	</script>
-	
-</head> 
-<body onload="init()"> 
-	
-	
-	
-	
+
+</head>
+<body onload="init()">
+
+
+
+
 	<!-- this just shows the username ID -->
 	<div id="container" style="display:none;">
 		<div class="header">
@@ -206,7 +206,7 @@
 	</div>
 
 
-	
+
 
 <!-- Start of INSTRUMENT IDEA -->
 <div data-role="page" id="page2">
@@ -216,13 +216,13 @@
 		<a id="arrow-right" href="#page4" data-transition="slide" data-icon="custom"  rel="external" onclick="saveViaAJAX();" class="ui-btn-right" data-iconpos="notext">Next</a>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-		
+	<div data-role="content">
+
 
 	  	<canvas id="paintBox">
 	    	Your browser does not support canvas
 	  	</canvas>
-		
+
 		<center>
 			<a href="#" data-role="button" data-inline="true" id="clearBtn"></a>
 			<a href="#" data-role="button" data-inline="true" data-theme="b" id="saveBtn" style="display:none"></a>
@@ -230,31 +230,31 @@
 
 
 		<script type="text/javascript">
-		
+
 		//alert(jQuery("#container .header .username").text());
-		
-		
+
+
 		function saveViaAJAX()
 		{
-				
+
 			var testCanvas = document.getElementById("paintBox");
 			var canvasData = testCanvas.toDataURL("image/png");
 			var postData = "canvasData="+canvasData;
 			var ajax = new XMLHttpRequest();
-			
+
 			var PageToSendTo = "testSave.php?";
 			var VariablePlaceholder = "variableName=";
-			
-			//send the USERNAME ID to here... from main.js			
+
+			//send the USERNAME ID to here... from main.js
 			var MyVariable = jQuery("#container .header .username").text();
-			
+
 			//here is the userID, can send to chat.html?
 			//send the content in test to the userID and send that to chat.html?
 			$("#test").html(MyVariable);
 			//alert(MyVariable);
-			
+
 			var UrlToSend = PageToSendTo + VariablePlaceholder + MyVariable;
-			
+
 			ajax.open("POST",UrlToSend,true);
 			ajax.setRequestHeader('Content-Type', 'canvas/upload');
 
@@ -270,22 +270,22 @@
 
 			ajax.send(postData);
 			//alert(canvasData);
-			
+
 			//UPDATE PROCESSING IMAGE VARIABLE HERE OR FIRE OFF PROCESSING SKETCH SO IT RENDERS
 			var pjs = Processing.getInstanceById('mycanvas');
 			//alert(canvasData);
 			var text = canvasData;
 		    pjs.newImage(text);
 			///
-			
+
 		}
 
 		</script>
-		
-		<!-- send this userID to chat.html? -->		
+
+		<!-- send this userID to chat.html? -->
 		<!-- <div id="test">userID</div> -->
-		
-		
+
+
 	</div><!-- /content -->
 
 
@@ -299,19 +299,19 @@
 		<h1>FIRE!</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-			
+	<div data-role="content">
+
 			<?php
 				$instrumentSound = $_POST["instrumentSound"];
 				$filepath = "files/instrument.html";
 				$file =fopen($filepath, "w");
-				$myHTML = 
-					
-					"<!DOCTYPE html> 
-					<html> 
-					<head> 
-						<title>My instrument</title> 
-						<meta name='viewport' content='width=device-width, initial-scale=1'> 
+				$myHTML =
+
+					"<!DOCTYPE html>
+					<html>
+					<head>
+						<title>My instrument</title>
+						<meta name='viewport' content='width=device-width, initial-scale=1'>
 						<link rel='stylesheet' href='../css/themes/default/jquery.mobile-1.2.0.min.css' />
 						<script src='../js/jquery.js'></script>
 						<script src='../js/jquery.mobile-1.2.0.min.js'></script>
@@ -319,11 +319,11 @@
 						<link rel='apple-touch-icon-precomposed' href='../img/icon-red-57.png'>
 						<script>
 
-							
-							
+
+
 						</script>
-					</head> 
-					<body> 
+					</head>
+					<body>
 
 					<div data-role='page' id='bar'>
 
@@ -331,8 +331,8 @@
 							<h1>My Instrument</h1>
 						</div><!-- /header -->
 
-						<div data-role='content'>	
-						      
+						<div data-role='content'>
+
 								<a onclick='this.firstChild.play()'><audio src='../" . $_POST["instrumentSound"] . "'></audio><img src='../images/test.png' style='border:1px solid; width:100%; height:200px;'></a>
 						</div><!-- /content -->
 
@@ -346,47 +346,47 @@
 					</html>";
 				fwrite($file, $myHTML);
 				fclose($file);
-			?>	
-				
+			?>
+
 				<script type="text/javascript" charset="utf-8">
 				    document.getElementById("finalAppName").innerHTML = dataURL;
 				</script>
-				
+
 				<p>
-					
-				
+
+
 				<div id="p1"></div>
-				<div id="instrument-button">	
+				<div id="instrument-button">
 					<!-- <img id="canvasimg" style="display:none;"> -->
 				</div>
-				
+
 				<canvas id="mycanvas"></canvas>
-				
+
 				<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
-				
+
 				<script type="application/javascript">
-						    
+
 					var jsString = localStorage.getItem('canvasImage');
 					// alert(localStorage.getItem('canvasImage'));
-					
+
 					//shoots off event from JS
 					function fireEvent() {
-						ChatAnywhere.prototype.fireThisEvent();						 						
+						ChatAnywhere.prototype.fireThisEvent();
 					}
-					
+
 					//access within function?
 					//chat.sendMessage();
-					
+
 					// Sound
 					var audioPullBack = document.createElement('audio');
 					audioPullBack.setAttribute('src', 'wav/brass.wav');
-					
+
 					var audioRelease = document.createElement('audio');
 					audioRelease.setAttribute('src', 'wav/fire.mp3');
-					
-					
+
+
 				</script>
-				
+
 				<script type="text/processing" data-processing-target="mycanvas">
 					//initialize variables
 					int leftRodTopX = 55;
@@ -418,33 +418,33 @@
 					PImage b;
 
 					void setup(){
-					
+
 						size(290,340);
 						background(255);
 						smooth();
 						fill(50);
-																		
+
 						//create initial slingshot
 						line(leftRodTopX,leftRodTopY,rightRodTopX,rightRodTopY); //string
 						newImage();
-						
+
 					}
-					
+
 					void newImage(String imageFile) {
 						//println("test");
 						b = loadImage(imageFile);
 					}
 
 					void draw(){
-						
+
 						image(b, 100, -20, 100, 139);
-						
+
 						if(mousePressed){
-								
+
 						  background(255);
 						  bezier(900,400,880,375,880,325,912,320);
 						  fill(255,0,0);
-						  
+
 						  image(b, 100, mouseY-15, 100, 139);
 						  noFill();
 						  bezier(rightRodTopX,rightRodTopY,145,mouseY,150,mouseY,leftRodTopX,leftRodTopY);
@@ -452,13 +452,13 @@
 						  noFill();
 						  line(rectMidX,rectTopY,rightRodTopX,rightRodTopY);
 						  line(rectMidX,rectTopY,leftRodTopX,leftRodTopY);
-						  line(145,mouseY,slingMid,leftRodTopY);	
-						  
-						  				  
+						  line(145,mouseY,slingMid,leftRodTopY);
+
+
 						}
 
 						if(mousePressed==false){
-						  
+
 						  background(255);
 						  noFill();
 						  line(rectMidX,rectTopY,rightRodTopX,rightRodTopY);       //right rod
@@ -480,7 +480,7 @@
 						   release.add(press);
 						   release.y+=gravity;
 						   //gravity+=0.6;
-						   //println(release.y); 
+						   //println(release.y);
 						   noFill();
 						   bezier(925,400,945,375,945,325,912,320);
 
@@ -510,43 +510,43 @@
 					  press.mult(cSquared);
 					  hasBeenReleased = true;
 					  gravity = 0;
-						
-					  // FIRE OFF CHAT MESSAG HERE, fire off a Jquery event from main.js					  
+
+					  // FIRE OFF CHAT MESSAG HERE, fire off a Jquery event from main.js
 					  fireEvent();
-					
+
 					  //
 					  //LOAD SOUND - arrow released
 					  audioRelease.play();
-					
-					}
-					
 
-					
+					}
+
+
+
 				</script>
-				
+
 				<div id="finalSoundpath" style="display:none">image.png</div></p>
-				
+
 				<form action="<?php echo $PHP_SELF;?>" method="post" onsubmit="this.formSound.value = document.getElementById('finalSoundpath').innerHTML;" data-ajax="false">
 				    <input type="hidden" name="instrumentSound" id="formSound" value="" />
 				    <!-- <input type="submit" value="Publish" name="submit" /> -->
 				</form>
-			
+
 				<!-- SEND A MESSAGE!! -->
 				<form id="chat-form" action="#" style="display:none">
 					<input class="input" id="chat-input" type="text" />
-				</form>	
-				
+				</form>
+
 				<div id="rightside">
 					<?php
-		
+
 							if ($handle = opendir('files/')) {
 								//echo "Directory handle: $handle\n";
-								
-					
+
+
 							while (false !== ($file = readdir($handle))) {
-																
+
 								$pieces = explode(".", $file);
-								
+
 									if ($file == '.') {
 									    // echo 'true';
 									}
@@ -562,7 +562,7 @@
 									else if ($file == '.html') {
 									    // echo 'true';
 									}
-									
+
 									else if ($file == 'instrument.html') {
 										// echo "<h3>Share the link to your app:</h3>";
 										// echo "<a href='files/" . $file . "' target='_blank'>" . $pieces[0] . "</a><br />";
@@ -570,10 +570,10 @@
 								}
 								closedir($handle);
 							}
-					?> 
+					?>
 				</div>
 
-		
+
 	</div><!-- /content -->
 
 
